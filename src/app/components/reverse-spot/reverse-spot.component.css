@@ -1,0 +1,21 @@
+.bg-dark {
+  background-color: #3e2c29 !important;
+}
+
+.text-warning {
+  color: #d4a373 !important;
+}
+
+.btn-warning {
+  background-color: #d4a373;
+  border-color: #d4a373;
+}
+
+.btn-warning:hover {
+  background-color: #b68d5a;
+  border-color: #b68d5a;
+}
+
+.equal-width-btn {
+  width: 100px;
+}

@@ -1,0 +1,85 @@
+.hero1 {
+      width: 100%;
+  aspect-ratio: 740 / 416;  /* or use padding-top fallback */
+  
+  /* background-image: url('assets/cup9.jpg'); */
+  background-repeat: no-repeat;  
+  background-size: contain;
+  background-position: center;
+    
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  
+  color: white;
+  font-size: 2em;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+
+@media (min-width: 768px) {
+  .custom-margin-top {
+    margin-top: -150px;
+  }
+}
+
+.br-1060 {
+  display: none;
+}
+
+@media (max-width: 1060px) {
+  .br-1060 {
+    display: inline;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .mobile-padding {
+    padding: 1.4rem !important;
+  }
+}
+
+/* p.small {
+  margin-top: -20px;
+}
+
+@media (min-width: 1024px) {
+  p.small {
+    margin-top: -40px;
+  }
+} */
+
+.fixed-img {
+  width: 100%;
+  height: 200px;
+  /* object-fit: cover; */
+}
+
+.center{
+  justify-content: center !important;
+  display: flex;
+}
+
+  @media (min-width: 672px) {
+    .coffeeView {
+     aspect-ratio: unset !important;
+    height: 450px !important; 
+    background-size: 100% 100% !important; 
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    }
+  }
+
+.custom-br {
+  display: inline;
+}
+
+@media (min-width: 850px) {
+  .custom-br {
+    display: none;
+  }
+}
+
+.img-fluid
+ {
+    max-width: 20% !important;
+ }

@@ -1,0 +1,95 @@
+<div style="min-height: 80vh;" class="p-5 justify-content-center align-items-center">
+  <div class="container py-5 bg-dark text-light rounded shadow-lg">
+    <button style="float: right; margin-top: -35px;" (click)="goHome()" aria-label="Cancel">
+      <i class="bi bi-x-lg"></i>
+    </button>
+
+    <div class="text-center mb-4">
+      <h2 class="text-warning">Reserve Your Spot</h2>
+      <p class="fst-italic">Secure a cozy corner and enjoy our finest blends.</p>
+    </div>
+
+    <form [formGroup]="reserveForm" (ngSubmit)="onSubmit()" class="row g-3" novalidate>
+      <div class="col-md-6">
+        <label for="name" class="form-label">Name<span class="text-danger">*</span></label>
+        <input id="name" type="text" class="form-control" formControlName="name" placeholder="Your Name"
+          [class.is-invalid]="reserveForm.get('name')?.invalid && reserveForm.get('name')?.touched" />
+        <div class="invalid-feedback" *ngIf="reserveForm.get('name')?.invalid && reserveForm.get('name')?.touched">
+          Name is required.
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label for="email" class="form-label">Email<span class="text-danger">*</span></label>
+        <input id="email" type="email" class="form-control" formControlName="email" placeholder="Your Email"
+          [class.is-invalid]="reserveForm.get('email')?.invalid && reserveForm.get('email')?.touched" />
+        <div class="invalid-feedback" *ngIf="reserveForm.get('email')?.invalid && reserveForm.get('email')?.touched">
+          Please enter a valid email.
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label for="date" class="form-label">Date<span class="text-danger">*</span></label>
+        <input id="date" type="date" class="form-control" formControlName="date"
+          [class.is-invalid]="reserveForm.get('date')?.invalid && reserveForm.get('date')?.touched" />
+        <div class="invalid-feedback" *ngIf="reserveForm.get('date')?.invalid && reserveForm.get('date')?.touched">
+          Date is required.
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label for="time" class="form-label">Time<span class="text-danger">*</span></label>
+        <input id="time" type="time" class="form-control" formControlName="time"
+          [class.is-invalid]="reserveForm.get('time')?.invalid && reserveForm.get('time')?.touched" />
+        <div class="invalid-feedback" *ngIf="reserveForm.get('time')?.invalid && reserveForm.get('time')?.touched">
+          Time is required.
+        </div>
+      </div>
+
+      <div class="col-12 text-center mt-4">
+        <button type="submit" class="btn btn-warning px-4 py-2">
+          {{ isEditing ? 'Update Reservation' : 'Reserve Now' }}
+        </button>
+
+      </div>
+    </form>
+  </div>
+
+  <div class="container mt-5" *ngIf="reservations.length > 0">
+    <h3 class="text-center mb-3">Your Reservations</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead style="background-color: #f3e5ab; color: #5c3a21;">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let res of reservations; let i = index">
+            <td>{{ res.name }}</td>
+            <td>{{ res.email }}</td>
+            <td>{{ res.date }}</td>
+            <td>{{ res.time }}</td>
+            <td class="d-flex gap-2 flex-wrap">
+              <button class="btn btn-sm btn-primary equal-width-btn" (click)="editReservation(i)">
+                Edit
+              </button>
+              <button class="btn btn-sm btn-danger equal-width-btn" (click)="deleteReservation(i)">
+                Delete
+              </button>
+              <button *ngIf="isEditing && editingIndex === i" type="button"
+                class="btn btn-sm btn-secondary equal-width-btn" (click)="cancelEdit()">
+                Cancel
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

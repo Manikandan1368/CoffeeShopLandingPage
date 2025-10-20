@@ -1,0 +1,21 @@
+.bg-cream {
+  background-color: #fdf6ed;
+}
+
+.text-brown {
+  color: #6f4e37;
+}
+
+.our-story-section img {
+  max-height: 450px;
+  object-fit: cover;
+}
+
+.text-muted {
+  color: #6c757d; 
+}
+
+.our-story-section h3 {
+  margin-top: 30px;
+  font-size: 1.8rem;
+}

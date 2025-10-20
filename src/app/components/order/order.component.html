@@ -1,0 +1,54 @@
+<section class="p-5">
+<div class="container py-4" style="min-height: 80vh; ">
+   <button style="float: right; margin-top: -35px;" (click)="goHome()" aria-label="Cancel">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  <div class="card p-4 mb-4 bg-light border border-2 border-brown">
+    <h4 class="text-brown mb-3">Place Your Coffee Order</h4>
+    <form [formGroup]="orderForm" (ngSubmit)="addOrder()">
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <input type="text" formControlName="customerName" class="form-control" placeholder="Customer Name">
+        </div>
+        <div class="col-md-3">
+          <select formControlName="item" class="form-select">
+            <option value="" disabled selected>Select Coffee</option>
+            <option *ngFor="let coffee of coffeeItems" [value]="coffee.name">
+              {{ coffee.name }} (${{ coffee.price }})
+            </option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <input type="number" formControlName="quantity" class="form-control" placeholder="Qty">
+        </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control" formControlName="price"  placeholder="Total Price" >
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-brown w-100" type="submit" [disabled]="orderForm.invalid">Add</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+<div class="row g-3">
+  <div class="col-md-4" *ngFor="let order of orders">
+    <div class="card border-brown h-100">
+      <div class="card-body bg-light position-relative">
+                <small class="text-muted position-absolute top-0 end-0 m-2">
+          {{ order.timestamp | date:'short' }}
+        </small>
+
+        <h5 class="card-title text-brown">{{ order.customerName }}</h5>
+        <p class="card-text">
+          <strong>Item:</strong> {{ order.item }}<br>
+          <strong>Quantity:</strong> {{ order.quantity }}<br>
+          <strong>Total:</strong> ${{ order.total }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</section>

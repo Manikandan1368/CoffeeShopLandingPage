@@ -1,0 +1,169 @@
+<div>
+  <section class="text-light text-center">
+    <div
+      class="d-flex flex-column flex-md-row align-items-center justify-content-start hero1 text-start px-3 px-md-5 pt-3 pt-md-5 pb-4"
+      style="background: url('assets/cup9.jpg'); background-size: cover; background-position: center; aspect-ratio: 740 / 416; background-repeat: no-repeat;">
+
+      <div class="w-100 custom-margin-top">
+        <h1 class="fw-bold mb-3" style="font-size: clamp(1.5rem, 4.5vw, 3rem); line-height: 1.2;">
+          Savor the Perfect <br> Brew!
+        </h1>
+
+        <p class="mb-4" style="font-size: clamp(1rem, 2.5vw, 1.25rem);">
+          Experience warmth, aroma and <br class="br-1060"> taste crafted just for you.
+        </p>
+
+        <div class="d-flex flex-row gap-2 justify-content-start " style="max-width: 10%;">
+          <button class="btn btn-warning px-3 py-2 btn-sm flex-grow-1 flex-shrink-1"
+            style="min-width: 100px; white-space: nowrap;" [routerLink]="['/order']">
+            Order Now
+          </button>
+          
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div style="position: relative; z-index: 20;">
+    <section id="menu" class="py-3 bg-cream text-center" style="background-color: whitesmoke;">
+      <div class="container">
+        <h2 class="fw-bold text-brown mb-3">Featured Blends</h2>
+        <div class="row g-4">
+          <div class="col-6 col-md-3" *ngFor="let item of features">
+            <div class="card bg-transparent border-0">
+              <img [src]="item.icon" width="70" class="mx-auto mb-3" alt="coffee">
+              <h5 class="fw-bold text-brown">{{item.title}}</h5>
+              <p>{{item.desc}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ <section>
+  <div class="row g-0 align-items-stretch">
+    <div class="col-lg-6 left-split text-white p-5 mobile-padding"
+      style="background: url('assets/choose.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; aspect-ratio: 740 / 416;">
+      <h3>What Makes Us Special</h3>
+      <p class="lead">Hand-roasted beans, <br class="d-sm-none"> locally sourced <br class="d-sm-none"><br
+          class="d-none d-sm-inline"> ingredients, and a <br class="d-sm-none"> passion for perfection.</p>
+      <p class="small">Every cup is crafted with care <br class="d-sm-none"> to deliver <br class="d-none d-sm-inline">unforgettable flavor.</p>
+      <a class="btn btn-outline-light mt-3" [routerLink]="['/explore']">Explore Our Craft</a>
+    </div>
+    <div class="col-lg-6 right-split p-5">
+      <div class="h-100 d-flex flex-column justify-content-center align-items-start">
+        <h4 class="mb-3">We're Brewing Daily</h4>
+        <p class="display-6 fw-bold">8:00 AM — 10:00 PM</p>
+        <p class="text-muted">Drop in for your morning boost and house-made treats.</p>
+            <a class="btn btn-dark mt-3" routerLink="/reserve">Reserve Your Spot</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background-color: whitesmoke;">
+  <div class="row g-0 align-items-stretch">
+    <div class="col-lg-3 d-flex flex-column justify-content-center p-3">
+      <h2 class="fw-bold text-brown center">Early Brew Bliss</h2>
+      <p class="text-muted small mb-4 center" style="text-align: center;">Start your morning right with bold blends and warm ambiance.</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a [routerLink]="['/visit-us']" class="btn btn-dark px-4">Visit Us</a>
+      </div>
+    </div>
+
+    <div class="col-lg-9 p-4">
+      <h3 class="mb-4 text-center fw-bold">Signature Selection</h3>
+      <div class="row gy-3">
+        <div class="col-6 col-md-3">
+          <div class="card gallery-card text-center">
+            <div class="card-header bg-white border-0 p-0">
+              <h6 class="font-weight-bold m-1">Gourmet Blend</h6>
+            </div>
+            <img src="assets/new.jpeg" class="card-img-top fixed-img" alt="coffee">
+            <div class="card-body p-2">
+              <p class="card-text small m-0">Creamy Perfection</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="card gallery-card text-center">
+            <div class="card-header bg-white border-0 p-0">
+              <h6 class="font-weight-bold m-1">Mocha Float</h6>
+            </div>
+            <img src="assets/new3.jpg" class="card-img-top fixed-img" alt="coffee">
+            <div class="card-body p-2">
+              <p class="card-text small m-0">Creamy Chill</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="card gallery-card text-center">
+            <div class="card-header bg-white border-0 p-0">
+              <h6 class="font-weight-bold m-1">Velvet Crema</h6>
+            </div>
+            <img src="assets/new2.jpg" class="card-img-top fixed-img" alt="coffee">
+            <div class="card-body p-2">
+              <p class="card-text small m-0">Balanced Intensity</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="card gallery-card text-center">
+            <div class="card-header bg-white border-0 p-0">
+              <h6 class="font-weight-bold m-1">Hot and Smooth</h6>
+            </div>
+            <img src="assets/new4.jpg" class="card-img-top fixed-img" alt="coffee">
+            <div class="card-body p-2">
+              <p class="card-text small m-0">Freshly Poured</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <section class="col-lg-12 left-split text-white p-5 mobile-padding fixed-img coffeeView"
+        style="background: url('assets/img7.png'); background-size: cover; background-position: center;  background-repeat: no-repeat;aspect-ratio: 750 / 516; height: auto; ">
+            <p class="small">We craft every cup, from the perfect espresso to the iced <br class="d-none d-sm-inline">indulgence, with dedication.
+          Experience <br class="custom-br"> the best beans and ultimate <br class="custom-br"> comfort in every visit. </p>
+       
+    </section>
+ 
+<section class="team-preview py-3">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-3 text-brown">Our Coffee Artists</h2>
+    <p class="text-muted mb-3">Meet the passionate team that makes every cup memorable.</p>
+
+    <div class="row justify-content-center gy-4">
+      <div class="col-4">
+        <div class="team-member">
+          <img src="assets/head.png" alt="Barista" class="rounded-circle mb-3 shadow-sm img-fluid">
+          <h5 class="fw-semibold mb-1">Olivia</h5>
+          <p class="text-muted small mb-0">Head Barista</p>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="team-member">
+          <img src="assets/baker.png" alt="Roaster" class="rounded-circle mb-3 shadow-sm img-fluid">
+          <h5 class="fw-semibold mb-1">Matthew</h5>
+          <p class="text-muted small mb-0">Flavor Architect</p>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="team-member">
+          <img src="assets/pastry.png" alt="Chef" class="rounded-circle mb-3 shadow-sm img-fluid">
+          <h5 class="fw-semibold mb-1">Sophia</h5>
+          <p class="text-muted small mb-0">Kitchen Chef</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </div>

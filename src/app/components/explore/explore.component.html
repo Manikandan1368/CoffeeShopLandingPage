@@ -1,0 +1,36 @@
+<section id="explore" class="explore-menu py-5 p-2">
+    <button
+  style="float: right; margin-top: -35px;"
+  (click)="goHome()"
+  aria-label="Cancel"
+>
+  <i class="bi bi-x-lg"></i>
+</button>
+  <div class="container text-center">
+    <h2 class="text-warning mb-4">Explore Our Coffee</h2>
+    <p class="text-muted mb-3">Crafted with precision and passion.</p>
+
+    <div class="row g-4 mb-5">
+      <div class="col-md-3 col-sm-6" *ngFor="let coffee of coffeeMenu">
+        <div class="card h-100 shadow-sm border-0">
+          <img [src]="coffee.image" [alt]="coffee.name" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title text-brown">{{ coffee.name }}</h5>
+            <p class="card-text text-muted">{{ coffee.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="featured-coffee">
+      <img
+        src="assets/img13.png"
+        alt="Special Coffee"
+        class="img-fluid rounded shadow-lg"
+        
+      >
+      <h4 class="text-warning mt-3">Barista’s Special Blend</h4>
+      <p class="text-muted">Hand-picked favorites just for you.</p>
+    </div>
+  </div>
+</section>

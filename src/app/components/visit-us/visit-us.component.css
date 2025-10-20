@@ -1,0 +1,12 @@
+.bg-cream {
+  background-color: #fdf6ed;
+}
+
+.text-brown {
+  color: #6f4e37;
+}
+
+.about-us-section img {
+  max-height: 400px;
+  object-fit: cover;
+}
